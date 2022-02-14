@@ -1,8 +1,11 @@
-const inputLabel = document.querySelector("#name-input");
-const nameLabel = document.querySelector("#name-output");
+const nameInput = document.querySelector("#name-input");
+const nameOutput = document.querySelector("#name-output");
 
-inputLabel.addEventListener("input", onInputChange);
+console.log(nameInput, nameOutput);
 
-function onInputChange(event) {
-  nameLabel.textContent = event.currentTarget.value;
+nameInput.addEventListener("input", onFormSubmit);
+function onFormSubmit(event) {
+  event.target.value == ""
+    ? (nameOutput.textContent = "Anonymous")
+    : (nameOutput.textContent = event.target.value);
 }
